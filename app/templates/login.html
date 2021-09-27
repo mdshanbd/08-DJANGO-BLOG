@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+
+<style>
+    .helptext {
+        display: none;
+    }
+</style>
+
+
+<div class="containter pt-4">
+    <div class="col-lg-6 shadow mx-auto p-0">
+        <div class="alert alert-success">
+            <h2>Login</h2>
+        </div>
+        <div class="p-4">
+            <form method="post" action="/login">
+                {% csrf_token %}
+                {{form.as_p}}
+                <hr />
+                <button class="btn btn-success" type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock  %}

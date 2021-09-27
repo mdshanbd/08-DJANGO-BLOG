@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+
+
+
+{% block content %}
+
+<style>
+    .helptext {
+        display: none;
+    }
+</style>
+
+
+<div class="containter pt-4">
+    <div class="col-lg-6 shadow mx-auto p-0">
+        <div class="alert alert-success">
+            <h2>Create Account</h2>
+        </div>
+        <div class="p-4">
+            <form method="post" action="/registration">
+                {% csrf_token %}
+                {{user_form.as_p}}
+                <hr />
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock  %}
